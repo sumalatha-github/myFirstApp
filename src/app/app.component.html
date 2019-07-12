@@ -16,11 +16,39 @@
         <input type="text"  [(ngModel)]="address"/>
       </div>
       <div style="padding-bottom:10px">
-          <button (click)="add(fname, lname,address)" >Add</button>
+          <button (click)="add(fname, lname,address)" [disabled]='disableField'>Add</button>
       </div>
       <div>
         {{name}}
       </div>
+      <div>  
+        <span [innerHTML]='propertyBinding'></span>                  
+      </div> 
+      <div >
+        {{fname}}{{lname}}
+      </div>
+      <div *ngFor = "let data of storedData">
+        <table id="customers">
+          <th> <thead>Table Data</thead> </th>
+          <tr>
+            <td>First Name</td>
+            <td>{{data.fname}}</td>
+          </tr>
+          <tr>
+              <td>Last Name</td>
+              <td>{{data.lname}}</td>
+          </tr>
+          <tr>
+              <td>Address</td>
+              <td>{{data.address}}</td>
+          </tr>
+          <tr>
+              <td>Image</td>
+              <td><img [src]='image' style="height: 10%;width: 10%"></td>
+          </tr>
+        </table>
+      </div>
+      <app-name-editor></app-name-editor>
 </div>
 
 <router-outlet></router-outlet>

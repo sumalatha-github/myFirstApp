@@ -1,0 +1,11 @@
+<p>name-editor works!</p>
+<label>
+    Name:<input type="text" [formControl]="name">
+</label>
+<p>
+    Value: {{ name.value }}
+</p>
+<p>
+    <button (click)="updateName()">Update Name</button>
+</p>
+<app-profile-editor [inputData]="sendDataValue" (countChange)=changeCount($event)></app-profile-editor>
