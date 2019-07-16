@@ -1,11 +1,14 @@
-<p>name-editor works!</p>
-<label>
-    Name:<input type="text" [formControl]="name">
-</label>
-<p>
-    Value: {{ name.value }}
-</p>
-<p>
-    <button (click)="updateName()">Update Name</button>
-</p>
+<fieldset style="border-radius: 14px;">
+    <legend>name-editor works!</legend>
+        <label>
+            Name:<input type="text" [formControl]="name">
+        </label>
+        <p>
+            Value: {{ name.value }}
+        </p>
+        <p>
+            <button (click)="updateName()">Update Name</button>
+        </p>
+</fieldset>
+
 <app-profile-editor [inputData]="sendDataValue" (countChange)=changeCount($event)></app-profile-editor>
